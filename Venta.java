@@ -1,14 +1,14 @@
 package supermarket;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Venta {
-    private ArrayList<Producto> producto;
-    private double totalDescuento ;
+    ArrayList<Producto> producto;
+    private double totalDescuento;
     
-    public Venta (ArrayList<Producto> p, double td){
+    public Venta (ArrayList<Producto> p){
         this.producto = p;
-        this.totalDescuento = td;
     }
 
     public ArrayList<Producto> getProducto() {
@@ -26,14 +26,29 @@ public class Venta {
     public void setTotalDescuento(double td) {
         this.totalDescuento = td;
     }
+
+    public void agregarProd(Producto p){
+        producto.add(p);
+    }
     
     public double calcularDesc(){
-        
+        double desc = 0;
+        for(Producto p: producto){ 
+            if(p.getPrimeraNecesidad() == true){
+                totalDescuento = p.getPrecio()*10/100;
+                desc = totalDescuento - p.getPrecio();
+            }
+        }
      return totalDescuento; 
     }
     
-    public void imprimirTicket(){
-        
+    public String imprimirTicket(){
+        String prod = "";
+        for(Producto p: producto){
+            prod =  p.mostrarProducto();
+        }
+        return prod + calcularDesc();
     }
     
 }
+

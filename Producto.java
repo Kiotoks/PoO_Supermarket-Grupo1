@@ -1,5 +1,7 @@
 package supermarket;
 
+import javax.swing.JOptionPane;
+
 public class Producto {
     private String nombre;
     private double precio;
@@ -37,7 +39,7 @@ public class Producto {
         this.marca = marca;
     }
 
-    public boolean isPrecioCuidado() {
+    public boolean getPrecioCuidado() {
         return precioCuidado;
     }
 
@@ -45,7 +47,7 @@ public class Producto {
         this.precioCuidado = precioCuidado;
     }
 
-    public boolean isPrimeraNecesidad() {
+    public boolean getPrimeraNecesidad() {
         return primeraNecesidad;
     }
 
@@ -56,17 +58,6 @@ public class Producto {
     public String mostrarProducto() {
         return  "nombre:" + nombre + ", precio:" + precio + ", marca:" + marca + ", precioCuidado:" + precioCuidado + ", primeraNecesidad:" + primeraNecesidad;
     }
-    
-    
-    public double calcularPrecio(){
-        double porcentaje;
-        if(this.primeraNecesidad == true){
-        
-            porcentaje = precio/100*10;
-            precio = precio - porcentaje;
-        }
-        return precio;
-    }
-   
-    
+
 }
+
