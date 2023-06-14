@@ -39,7 +39,7 @@ public class SuperMercado {
     public int calcularCantCui(){
      for(Venta v: ventas){
          for(Producto p: v.producto){ 
-            if(v.p.getPrecioCuidado() == true){
+            if(p.getPrecioCuidado() == true){
                 cantCuidados ++;
             }
          }
@@ -51,7 +51,7 @@ public class SuperMercado {
     public int calcularCantPri(){
         for(Venta v: ventas){
             for(Producto p: v.producto){ 
-                if(v.p.getPrimeraNecesidad() == true){
+                if(p.getPrimeraNecesidad() == true){
                     cantPrimeraN ++;
                 }
             }
