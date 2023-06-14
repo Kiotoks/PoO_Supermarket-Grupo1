@@ -5,10 +5,13 @@ import javax.swing.JOptionPane;
 
 public class Venta {
     ArrayList<Producto> producto;
+    private static int cantTickets = 1;
+    private int numeroTicket;
     private double totalDescuento;
     
     public Venta (ArrayList<Producto> p){
         this.producto = p;
+        this.numeroTicket = Venta.cantTickets++;
     }
 
     public ArrayList<Producto> getProducto() {
@@ -43,9 +46,9 @@ public class Venta {
     }
     
     public String imprimirTicket(){
-        String prod = "";
+        String prod = "numero ticket: " + numeroTicket + "\n";
         for(Producto p: producto){
-            prod =  p.mostrarProducto();
+            prod +=  p.mostrarProducto();
         }
         return prod + calcularDesc();
     }
