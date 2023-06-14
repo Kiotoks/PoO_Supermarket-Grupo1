@@ -36,8 +36,9 @@ public class SuperMercado {
         this.cantPrimeraN = cantP;
     }
     
-    public int calcularCantCui(){
-     for(Venta v: ventas){
+    public int calcularCantCui(String fecha){
+    // chequear fecha?? 
+        for(Venta v: ventas){
          for(Producto p: v.producto){ 
             if(p.getPrecioCuidado() == true){
                 cantCuidados ++;
@@ -48,7 +49,8 @@ public class SuperMercado {
     }
     
     
-    public int calcularCantPri(){
+    public int calcularCantPri(String fecha){
+        // chequear fecha?
         for(Venta v: ventas){
             for(Producto p: v.producto){ 
                 if(p.getPrimeraNecesidad() == true){
