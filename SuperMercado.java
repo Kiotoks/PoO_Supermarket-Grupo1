@@ -7,7 +7,8 @@ public class SuperMercado {
     private ArrayList<Venta> ventas;
     private int cantCuidados;
     private int cantPrimeraN;
-    
+    private ArrayList<Fecha> fechas;
+
     public SuperMercado(ArrayList<Venta> v){
         this.ventas = v;
     }
@@ -36,12 +37,13 @@ public class SuperMercado {
         this.cantPrimeraN = cantP;
     }
     
-    public int calcularCantCui(String fecha){
-    // chequear fecha?? 
+    public int calcularCantCui(Fecha f){
         for(Venta v: ventas){
-         for(Producto p: v.producto){ 
-            if(p.getPrecioCuidado() == true){
-                cantCuidados ++;
+            if (ventas.getFecha == f){
+              for(Producto p: v.producto){ 
+                if(p.getPrecioCuidado() == true){
+                    cantCuidados ++;
+                }  
             }
          }
      }  
@@ -49,13 +51,14 @@ public class SuperMercado {
     }
     
     
-    public int calcularCantPri(String fecha){
-        // chequear fecha?
+    public int calcularCantPri(Fecha f){
         for(Venta v: ventas){
-            for(Producto p: v.producto){ 
-                if(p.getPrimeraNecesidad() == true){
-                    cantPrimeraN ++;
-                }
+            if (ventas.getFecha == f){
+               for(Producto p: v.producto){ 
+                    if(p.getPrimeraNecesidad() == true){
+                        cantPrimeraN ++;
+                    }
+                }   
             }
         }
         return cantPrimeraN;
@@ -66,9 +69,18 @@ public class SuperMercado {
     }
     
     public void mostrarSuper(){
-        for(Venta v: ventas){
-            JOptionPane.showMessageDialog(null, v.imprimirTicket());
+        for(Fecha f: fechas){
+            JOptionPane.showMessageDialog(null, f "La cantidad de productos de precios cuidados son: " + calcularCantCui());
+            for(Venta v: ventas){
+                if (ventas.getFecha == f){
+                    JOptionPane.showMessageDialog(null, v.imprimirTicket());
+                }
+            }
         }
+
+        
+
+        
         JOptionPane.showMessageDialog(null, "La cantidad de productos de precios cuidados son: " + calcularCantCui());
         JOptionPane.showMessageDialog(null, "La cantidad de productos de primera necesidad son: " + calcularCantPri());
     }

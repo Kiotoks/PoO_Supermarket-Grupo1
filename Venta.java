@@ -8,9 +8,11 @@ public class Venta {
     private static int cantTickets = 1;
     private int numeroTicket;
     private double totalDescuento;
-    
-    public Venta (//ArrayList<Producto> p){
-        this.productos =new ArrayList();
+    private Fecha fecha;
+
+    public Venta (Fecha f){
+        this.fecha = f;
+        this.productos = new ArrayList();
         this.numeroTicket = Venta.cantTickets++;
     }
 
@@ -34,6 +36,13 @@ public class Venta {
         producto.add(p);
     }
     
+    public Fecha getFecha(){
+        return fecha;
+    }
+    
+    public void setFecha(Fecha f){
+        this.fecha = f;
+    }
     public double calcularDesc(){
         double desc = 0;
         for(Producto p: producto){ 
@@ -48,6 +57,7 @@ public class Venta {
     
     public String imprimirTicket(){
         String prod = "numero ticket: " + numeroTicket + "\n";
+        prod += "Fecha" + fecha + "\n";
         for(Producto p: producto){
             prod +=  p.mostrarProducto();
         }
