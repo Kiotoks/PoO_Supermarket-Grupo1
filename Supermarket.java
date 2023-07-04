@@ -19,7 +19,9 @@ public class Supermarket {
         productos.add(p2); 
         productos.add(p3);
 
-        Venta v1 = new Venta(fecha???,productos);
+        fecha = new Fecha(20,10,2022);
+
+        Venta v1 = new Venta(fecha,productos);
         
         ArrayList v = new ArrayList<Venta>();
         
