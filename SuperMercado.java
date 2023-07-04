@@ -9,8 +9,8 @@ public class SuperMercado {
     private int cantPrimeraN;
     private ArrayList<Fecha> fechas;
 
-    public SuperMercado(ArrayList<Venta> v){
-        this.ventas = v;
+    public SuperMercado(){
+        ventas = new Arraylist();
     }
 
     public ArrayList<Venta> getVentas() {
