@@ -1,4 +1,4 @@
-public static class Fecha{
+public class Fecha{
 
     private int dia;
     private int mes;
