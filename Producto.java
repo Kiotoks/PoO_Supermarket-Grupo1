@@ -6,13 +6,15 @@ public class Producto {
     private String nombre;
     private double precio;
     private String marca;
-    private boolean precioCuidado;
-    private boolean primeraNecesidad;
+    private boolean precioCuidado = false;
+    private boolean primeraNecesidad = false;
     
-    public Producto(String n, double p, String m, boolean pc, boolean pn){
+    public Producto(String n, double p, String m, boolean pc, boolean ppn){
         this.nombre = m;
         this.precio = p;
         this.marca = m;
+        this.precioCuidado = pc;
+        this.primeraNecesidad = ppn;
     }
 
     public String getNombre() {
