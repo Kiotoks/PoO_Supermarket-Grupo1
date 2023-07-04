@@ -9,7 +9,7 @@ public class Producto {
     private boolean precioCuidado;
     private boolean primeraNecesidad;
     
-    public Producto(String n, double p, String m){
+    public Producto(String n, double p, String m, boolean pc, boolean pn){
         this.nombre = m;
         this.precio = p;
         this.marca = m;
