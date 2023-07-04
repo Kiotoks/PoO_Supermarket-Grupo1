@@ -10,7 +10,7 @@ public class SuperMercado {
     private ArrayList<Fecha> fechas;
 
     public SuperMercado(){
-        ventas = new Arraylist();
+        this.ventas = new Arraylist();
     }
 
     public ArrayList<Venta> getVentas() {
