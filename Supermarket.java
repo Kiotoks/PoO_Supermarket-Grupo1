@@ -13,19 +13,14 @@ public class Supermarket {
         p1.setPrecioCuidado(true);
         p3.setPrimeraNecesidad(true);
 
-        ArrayList productos = new ArrayList<Producto>();
-
-        productos.add(p1);
-        productos.add(p2); 
-        productos.add(p3);
-
-        fecha = new Fecha(20,10,2022);
-
-        Venta v1 = new Venta(fecha,productos);
+        Feha fecha = new Fecha(20,10,2022);
+        Venta v1 = new Venta(fecha);
+        v1.agregarProd(p1);
+        v1.agregarProd(p2);
+        v1.agregarProd(p3);
         
-        ArrayList v = new ArrayList<Venta>();
-        
-        SuperMercado superM = new SuperMercado(v);
+        SuperMercado superM = new SuperMercado();
+        superM.agregarVenta(v1)
         superM.mostrarSuper();
     }
     
