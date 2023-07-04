@@ -68,11 +68,10 @@ public class SuperMercado {
         ventas.add(v);
     }
     
-    public void mostrarSuper(){
-        for(Fecha f: fechas){
+    public void mostrarDesFecha(Fecha f){
             JOptionPane.showMessageDialog(null, f "La cantidad de productos de precios cuidados son: " + calcularCantCui());
             for(Venta v: ventas){
-                if (ventas.getFecha == f){
+                if (ventas.getFecha() == f){
                     JOptionPane.showMessageDialog(null, v.imprimirTicket());
                 }
             }
@@ -80,7 +79,7 @@ public class SuperMercado {
 
         
 
-        
+    public void mostrarSuper(){    
         JOptionPane.showMessageDialog(null, "La cantidad de productos de precios cuidados son: " + calcularCantCui());
         JOptionPane.showMessageDialog(null, "La cantidad de productos de primera necesidad son: " + calcularCantPri());
     }
